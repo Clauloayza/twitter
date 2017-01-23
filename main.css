@@ -1,9 +1,10 @@
 h1{
     background: #E0E0E0;
     border-top: 2px solid #BEBEBE;
-    font-size: 25px;
+    font-size:20px;
+    font-weight: bold;
     padding: 10px 0;
-    margin: 10px 0 20px 0;
+    margin: 0 0 20px 0;
 }
 .tareas{
     margin: 0 30px;
