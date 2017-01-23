@@ -2,9 +2,7 @@ function limpiarCuadroTexto(){
     document.getElementById("cuadroTexto").value="";
 }
 
-function checkBox(){
-    
-}
+
 
 function agregaTarea(){
     var texto= document.getElementById("cuadroTexto").value;
