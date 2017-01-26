@@ -40,5 +40,6 @@ h1{
     top: 14px;
 }
 .lista {
-    display: none;
+    overflow: scroll;
+    width: 100%;
 }

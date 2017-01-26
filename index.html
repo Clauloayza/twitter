@@ -10,34 +10,32 @@
     <title>Twitter</title>
 </head>
 <body>
-    <section class="app">
+    <header class="app">
         <h1 class="titulo text-center">TODO APP</h1>
-    </section>
+    </header>
     <section class="agregar">
         <div class="tareas">
             <div class="row">
-            <div class="col-xs-12" id="padremax">
-                <textarea class="form-control cuadro" id="cuadroTexto" placeholder="Añade tu nueva tarea."></textarea>
+            <div class="col-xs-12" id="contenido">
+                <textarea class="form-control cuadro" id="texto" placeholder="Añade tu nueva tarea."></textarea>
                 <div class="boton">
-                    <i class="glyphicon glyphicon-plus signo-mas"></i><button class="btn btn-primary" id="btn-add" onclick="agregaTarea()">Añadir tarea</button>
+                    <i class="glyphicon glyphicon-plus signo-mas"></i><button class="btn btn-primary" id="boton" >Añadir tarea</button>
                 </div>
                 <hr>
             </div>
         </div>
         </div>
     </section>
-    <section class="lista" id="lista">
-        <div class="tareas">
-            <div class="row">
-              <div class="col-xs-12">
-                <div class="agregaTarea">
-                    <input type="checkbox">
-                    <span id="nuevaTarea">Nombre</span>
-                    <i class="glyphicon glyphicon-trash tacho"></i>
-                </div>
-              </div>
-           </div>
-        </div>
+    <section class="lista">
+       <div class="row">
+          <div class="col-xs-12">
+             <ul id="lista">
+               
+             </ul>
+         </div> 
+       </div>
+      
+        
     </section>
 </body>
 <script type='text/javascript' src='main.js'></script>
