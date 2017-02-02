@@ -23,7 +23,7 @@ h1{
     max-width: 100%;
     min-width: 100%;
 }
-.signo-mas{
+.iconoMas{
     position: absolute;
     left: 10px;
     top: 9px;
@@ -34,12 +34,16 @@ h1{
     padding: 10px 7px;
     position: relative;
 }
-.tacho{
-    position: absolute;
-    right: 10px;
-    top: 14px;
+.glyphicon-trash{
+	float: right;
+}
+li{
+	background: #E0E0E0;
+	list-style: none;
+	padding: 6px;
+	border-radius: 3px;
+	margin-bottom: 5px;
 }
 .lista {
-    overflow: scroll;
     width: 100%;
 }

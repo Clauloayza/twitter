@@ -1,4 +1,33 @@
-var texto= document.getElementById("texto");
+var listaTareas =[
+	
+	{nombre:"tarea", isDone: true},
+	{nombre:"tarea2", isDone: false},
+	{nombre:"tarea3", isDone: false},
+	{nombre:"tarea4", isDone: true}
+
+];
+
+
+
+function drawTasksList(){
+	//funcion dibujar tareas
+	var lista = document.getElementById("lista");
+	
+	
+	for (var i in listaTareas){
+		var html = "<li class='works'><input type='checkbox' "+ (listaTareas[i].isDone?"checked":"") + ">" + listaTareas[i].nombre + "<i class='glyphicon glyphicon-trash'>" + "</Li>"; 
+		lista.innerHTML += html;
+		
+	}
+}
+
+
+
+
+
+
+
+/*var texto= document.getElementById("texto");
 var boton= document.getElementById("boton");
 var lista= document.getElementById("lista");
 
