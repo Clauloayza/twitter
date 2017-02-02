@@ -12,6 +12,8 @@ var listaTareas =[
 function drawTasksList(){
 	//funcion dibujar tareas
 	var lista = document.getElementById("lista");
+	var texto = document.getElementById("texto");
+	var boton = document.getElementById("boton");
 	
 	
 	for (var i in listaTareas){
@@ -19,6 +21,8 @@ function drawTasksList(){
 		lista.innerHTML += html;
 		
 	}
+	
+	if ()
 }
 
 
