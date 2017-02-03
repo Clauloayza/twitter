@@ -1,41 +1,51 @@
+var textarea = document.getElementById("texto");
+
+
 var listaTareas =[
 	
-	{nombre:"tarea", isDone: true},
-	{nombre:"tarea2", isDone: false},
-	{nombre:"tarea3", isDone: false},
-	{nombre:"tarea4", isDone: true}
-
+	{nombre:textarea, isDone: false},
+			
 ];
 
 
-
 function drawTasksList(){
-	//funcion dibujar tareas
+	if(textarea.value == "" || textarea.value == 0){
+		alert('Tienes que ingresar tarea');
+	}else{
+		//funcion dibujar tareas
 	var lista = document.getElementById("lista");
-	var texto = document.getElementById("texto");
-	var boton = document.getElementById("boton");
-	
 	
 	for (var i in listaTareas){
-		var html = "<li class='works'><input type='checkbox' "+ (listaTareas[i].isDone?"checked":"") + ">" + listaTareas[i].nombre + "<i class='glyphicon glyphicon-trash'>" + "</Li>"; 
+		var html = "<li class='works'><input type='checkbox' onclick='checkList("+i+")' "+ (listaTareas[i].isDone?"checked":"") + ">" + listaTareas[i].nombre.value + "<i class='glyphicon glyphicon-trash' onclick='selectTach("+i+")'>" + "</Li>"; 
 		lista.innerHTML += html;
 		
 	}
 	
-	if ()
+	textarea.value = "";
+	textarea.focus();
+	}
+	
+}
+
+
+function checkList(event){
+	
+	var lista = document.getElementById("lista");
+	
+	if(listaTareas[_valor].isDone == false){
+		listaTareas[_valor].isDone = true;
+		//console.log();
+		lista.childNodes[_valor].childNodes[1].style.textDecoration="line-through";
+	}else{
+		listaTareas[_valor].isDone = false;
+		lista.childNodes[_valor].childNodes[1].style.textDecoration="none";
+	}
 }
 
 
 
 
-
-
-
-/*var texto= document.getElementById("texto");
-var boton= document.getElementById("boton");
-var lista= document.getElementById("lista");
-
-boton.addEventListener("click", onButtonClick);
+/*
 
 
 function onButtonClick(evt){
@@ -76,12 +86,12 @@ function agregarMensaje(){
     checking.addEventListener("click", onChange);   
 }
 
-function onIconClick(evento){
+function Click(evento){
     console.log(evento.target.parentNode);
     lista.removeChild(evento.target.parentNode);
 }
 
-function onChange(evento){
+function Change(evento){
     console.log(evento.target);
     if(evento.target.checked){
         evento.target.nextSibling.style.textDecoration="line-through";
@@ -90,8 +100,7 @@ function onChange(evento){
     }
 }
 
-
-/*function limpiarCuadroTexto(){
+function limpiarCuadro(){
     document.getElementById("cuadroTexto").value="";
 }
 
