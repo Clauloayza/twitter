@@ -1,27 +1,29 @@
 var textarea = document.getElementById("texto");
 
 
-var listaTareas =[
-	
-	{nombre:textarea, isDone: false},
-			
-];
+var listaTareas = [];
 
 
+function agregar(){
+		
+	if(textarea.value == "" || textarea.value == 0){
+		alert('Tienes que ingresar tarea');
+	}else{
+		
+		listaTareas.push({nombre:textarea.value, isDone:false});
+		drawTasksList();
+	}
+}
 
-listaTareas.push[{nombre:textarea, isDone:false}];
+
 function drawTasksList(){
 
 	var lista = document.getElementById("lista");
 	
-	if(textarea.value == "" || textarea.value == 0){
-		alert('Tienes que ingresar tarea');
-	}else{
-		//funcion dibujar tareas
-	
-	
+	//funcion dibujar tareas
+	lista.innerHTML = "";
 	for (var i in listaTareas){
-		var html = "<li class='works'><input type='checkbox' onclick='checkList("+i+")' "+ (listaTareas[i].isDone?"checked":"") + ">" + listaTareas[i].nombre.value + "<i class='glyphicon glyphicon-trash' onclick='selecTach("+i+")'>" + "</Li>"; 
+		var html = "<li class='works' style = '"+ (listaTareas[i].isDone?"text-decoration:line-through":"") + "' ><input type='checkbox' onclick='checkList("+i+")'  "+ (listaTareas[i].isDone?"checked":"") + ">" + listaTareas[i].nombre + "<i class='glyphicon glyphicon-trash' onclick='selecTach("+i+")'>" + "</Li>"; 
 		
 		lista.innerHTML += html;
 		
@@ -31,24 +33,28 @@ function drawTasksList(){
 	textarea.focus();
 	}
 	
-}
 
 
 function checkList(box){
 	
-	if(listaTareas[box].isDone == false){
+	listaTareas[box].isDone = !listaTareas[box].isDone;
+	
+	
+	/*if(listaTareas[box].isDone == false){
 		listaTareas[box].isDone = true;
 		//console.log();
-		lista.getElementsByClassName("works")[box].style.textDecoration="line-through";
+		//lista.getElementsByClassName("works")[box].style.textDecoration="line-through";
 	}else{
 		listaTareas[box].isDone = false;
-		lista.getElementsByClassName("works")[box].style.textDecoration="none";
-	}
+		//lista.getElementsByClassName("works")[box].style.textDecoration="none";
+	}*/
+	
+	drawTasksList();
 }
 
-function selecTach(){
-	
-	
+function selecTach(tach){
+	listaTareas.slice(tach,1);
+	drawTasksList();
 	
 }
 
