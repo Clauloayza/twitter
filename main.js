@@ -53,7 +53,7 @@ function checkList(box){
 }
 
 function selecTach(tach){
-	listaTareas.slice(tach,1);
+	listaTareas.splice(tach,1);
 	drawTasksList();
 	
 }
