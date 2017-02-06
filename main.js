@@ -1,6 +1,5 @@
 var textarea = document.getElementById("texto");
 
-
 var listaTareas = [];
 
 
